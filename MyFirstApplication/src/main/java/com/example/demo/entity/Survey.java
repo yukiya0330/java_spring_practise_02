@@ -1,11 +1,13 @@
 package com.example.demo.entity;
 
-public class Survey {
+import java.time.LocalDateTime;
 
+public class Survey {
 	private int id;
 	private int age;
 	private int satisfaction;
 	private String comment;
+	private LocalDateTime created;
 
 	public Survey() {
 	}
@@ -33,6 +35,12 @@ public class Survey {
 	}
 	public void setComment(String comment) {
 		this.comment = comment;
+	}
+	public LocalDateTime getCreated() {
+		return created;
+	}
+	public void setCreated(LocalDateTime created) {
+		this.created = created;
 	}
 
 }

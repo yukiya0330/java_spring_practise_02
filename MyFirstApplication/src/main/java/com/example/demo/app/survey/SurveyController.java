@@ -1,5 +1,6 @@
 package com.example.demo.app.survey;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,9 +77,10 @@ public class SurveyController {
 		survey.setAge(surveyForm.getAge());
 		survey.setSatisfaction(surveyForm.getSatisfaction());
 		survey.setComment(surveyForm.getComment());
+		survey.setCreated(LocalDateTime.now());
 
 		surveyService.save(survey);
-		redirectattributes.addAttribute("complete", "Resisterd!");
+		redirectattributes.addFlashAttribute("complete", "Resisterd!");
 		return "redirect:/survey/form";
 	}
 
