@@ -31,6 +31,7 @@ public class SurveyController {
 	@GetMapping
 	public String inddex(Model model) {
 		List<Survey> list = surveyService.getAll();
+		
 
 		model.addAttribute("surveyList", list);
 		model.addAttribute("title", "Survey Index");
