@@ -15,7 +15,7 @@ public class WebMvcControllerAdvice {
 
 	/*
 	 * This method changes empty character to null
-	 * こちらのメソッドを用意しておくと送信された空文字はnullに変換されます
+	 * こちらのメソッドを用意しておくと送信された空文字はnull に変換されます
 	 */
     @InitBinder
     public void initBinder(WebDataBinder dataBinder) {
