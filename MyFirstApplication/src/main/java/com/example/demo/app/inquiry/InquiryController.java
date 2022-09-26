@@ -58,13 +58,13 @@ public class InquiryController {
 			Model model,
 			@ModelAttribute("complete") String complete) {
 		model.addAttribute("title", "Inquiry Form");
-		return "inquiry/form";
+		return "inquiry/form_boot";
 	}
 
 	@PostMapping("/form")
 	public String formGoBack(InquiryForm inquiryForm, Model model) {
 		model.addAttribute("title", "Inquiry Form");
-		return "inquiry/form";
+		return "inquiry/form_boot";
 	}
 
 	@PostMapping("/confirm")
@@ -73,10 +73,10 @@ public class InquiryController {
 			Model model) {
 		if(result.hasErrors()) {
 			model.addAttribute("title", "inquiry Form");
-		return "inquiry/form";
+		return "inquiry/form_boot";
 		}
 		model.addAttribute("title", "confirm Page");
-		return "inquiry/confirm";
+		return "inquiry/confirm_boot";
 	}
 
 	@PostMapping("/complete")
@@ -86,7 +86,7 @@ public class InquiryController {
 			RedirectAttributes redirectattributes) {
 		if(result.hasErrors()) {
 			model.addAttribute("title", "InquiryForm");
-			return "inquiry/form";
+			return "inquiry/form_boot";
 		}
 		Inquiry inquiry = new Inquiry();
 		inquiry.setName(inquiryForm.getName());
@@ -96,7 +96,7 @@ public class InquiryController {
 
 		inquiryService.save(inquiry);
 		redirectattributes.addFlashAttribute("complete", "Resisterd!");
-		return "redirect:/inquiry/form";
+		return "redirect:/inquiry";
 	}
 
 //	@ExceptionHandler(InquiryNotFoundExeption.class)
