@@ -31,13 +31,14 @@ public class InquiryController {
 	@GetMapping
 	public String index(Model model) {
 		List<Inquiry> list = inquiryService.getAll();
-		Inquiry inquiry = new Inquiry();
-		inquiry.setId(4);
-		inquiry.setName("Jame");
-		inquiry.setEmail("sampl@example.com");
-		inquiry.setContents("Hello");
-		
-		inquiryService.update(inquiry);
+
+//		Inquiry inquiry = new Inquiry();
+//		inquiry.setId(4);
+//		inquiry.setName("Jame");
+//		inquiry.setEmail("sampl@example.com");
+//		inquiry.setContents("Hello");
+
+//		inquiryService.update(inquiry);
 
 //		try {
 //		} catch(InquiryNotFoundExeption e) {
@@ -49,7 +50,7 @@ public class InquiryController {
 		model.addAttribute("inquiryList", list);
 		model.addAttribute("title", "Inquiry Index");
 
-		return "inquiry/index";
+		return "inquiry/index_boot";
 	}
 
 	@GetMapping("/form")
@@ -97,7 +98,7 @@ public class InquiryController {
 		redirectattributes.addFlashAttribute("complete", "Resisterd!");
 		return "redirect:/inquiry/form";
 	}
-	
+
 //	@ExceptionHandler(InquiryNotFoundExeption.class)
 //	public String handlExeption(InquiryNotFoundExeption e, Model model) {
 //		model.addAttribute("message", e);
